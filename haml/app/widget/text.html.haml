@@ -6,7 +6,6 @@
 .widget-text
   %input#input(type='text' autofocus="autofocus"
          x-bind='keydown/0: input'
-         placeholder="Type to Chat or Play"
          class='{error(.error)}')
   %div(class="text #{countdown} #{gate}")
     .line

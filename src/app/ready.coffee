@@ -92,7 +92,7 @@ ready (model) ->
     player.set 'error', error
 
   @handleChat = (e, input, next) ->
-    if e.which == 13
+    if e.which == 13 && $.trim($(input).val()) != ''
       model.unshift '_game.chat', "<b>#{player.get('name')}</b>: #{$(input).val()}"
       $(input).val('')
       console.log 'Chat'

@@ -40,7 +40,7 @@ $text-height: 10px + $text-line * 5
     +transition(opacity 1.5s)
     text-align: left
     background: white
-    font-variant: small-caps
+    //font-variant: small-caps
     .line, .line *
       font-size: 14px !important
       line-height: 17px !important
@@ -49,6 +49,13 @@ $text-height: 10px + $text-line * 5
     .line
       +text-shadow(none)
       color: #333
+    &:after
+      position: absolute
+      right: 10px !important
+      bottom: 50px !important
+      content: "Chat"
+      color: #ddd
+      font-size: 30px
   .text
     position: relative
     padding: 4px 6px 6px

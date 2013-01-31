@@ -7810,7 +7810,6 @@ body {
   transition: opacity 1.5s;
   text-align: left;
   background: white;
-  font-variant: small-caps;
 }
 /* line 44, ../../sass/widget/_text.sass */
 .widget-text .gate .line, .widget-text .gate .line * {
@@ -7827,6 +7826,15 @@ body {
   color: #333333;
 }
 /* line 52, ../../sass/widget/_text.sass */
+.widget-text .gate:after {
+  position: absolute;
+  right: 10px !important;
+  bottom: 50px !important;
+  content: "Chat";
+  color: #dddddd;
+  font-size: 30px;
+}
+/* line 59, ../../sass/widget/_text.sass */
 .widget-text .text {
   position: relative;
   padding: 4px 6px 6px;
@@ -7835,34 +7843,34 @@ body {
   color: rgba(0, 0, 0, 0.4);
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
-/* line 55, ../../sass/widget/_text.sass */
+/* line 62, ../../sass/widget/_text.sass */
 .widget-text .text * {
   font-size: 18px;
   line-height: 28px;
 }
-/* line 62, ../../sass/widget/_text.sass */
+/* line 69, ../../sass/widget/_text.sass */
 .widget-text .text.off-countdown {
   color: black;
   text-shadow: none;
 }
-/* line 63, ../../sass/widget/_text.sass */
+/* line 70, ../../sass/widget/_text.sass */
 .widget-text .text.off-countdown .countdown {
   display: none;
 }
-/* line 67, ../../sass/widget/_text.sass */
+/* line 74, ../../sass/widget/_text.sass */
 .widget-text .text.off-countdown .next {
   border-bottom: 2px solid black;
 }
-/* line 70, ../../sass/widget/_text.sass */
+/* line 77, ../../sass/widget/_text.sass */
 .widget-text .text.off-gate .gate {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 73, ../../sass/widget/_text.sass */
+/* line 80, ../../sass/widget/_text.sass */
 .widget-text .line .prev {
   color: #cccccc;
 }
-/* line 78, ../../sass/widget/_text.sass */
+/* line 85, ../../sass/widget/_text.sass */
 .widget-text button {
   left: 33.3333%;
   width: 33.3333%;
@@ -7874,7 +7882,7 @@ body {
   color: #666666;
   opacity: 1;
 }
-/* line 90, ../../sass/widget/_text.sass */
+/* line 97, ../../sass/widget/_text.sass */
 .widget-text button.ready {
   visibility: hidden;
 }
