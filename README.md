@@ -64,9 +64,9 @@ You don't need to compile `.coffee` to `.js`, because it's done automatically fo
 But `.html.haml` and `.sass` files need to be compiled into `.html` and `.css`.
 To do so you'll first need to install `ruby` and ruby gems listed in `Gemfile`:
 ``` bash
-  \curl -L https://get.rvm.io | bash -s stable --ruby
-  cd /path/to/type4fame
-  bundle install
+  $ \curl -L https://get.rvm.io | bash -s stable --ruby
+  $ cd /path/to/type4fame
+  $ bundle install
 ```
 Now you can run
 ``` bash
