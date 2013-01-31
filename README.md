@@ -1,6 +1,6 @@
 #[Type4Fame](http://type4fame.com/)
 
-[Type4Fame](http://type4fame.com/) is a multiplayer typing game havily inspired by typeracer.com but targeting a wider audience, a lot of cool gamification features and lots of new cool features. Get experience and money as you type, upgrade and buy new chars (not only cars, but superheroes, planes, rockets, robots, heroes from games and anime, etc.).
+[Type4Fame](http://type4fame.com/) is a multiplayer typing game havily inspired by typeracer.com but targeting a wider audience, a lot of cool gamification features, new game modes and ability to create your own public or private games. Get experience and money as you type, upgrade and buy new chars (not only cars, but superheroes, planes, rockets, robots, heroes from games and anime, etc.).
 
 ![Screenshot in Game](https://raw.github.com/cray0000/type4fame/master/public/img/screenshot_game.png "Screenshot in Game")
 ![Screenshot in Lobby](https://raw.github.com/cray0000/type4fame/master/public/img/screenshot_lobby.png "Screenshot in Lobby")
