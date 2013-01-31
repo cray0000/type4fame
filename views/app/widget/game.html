@@ -1,0 +1,15 @@
+<game:>
+<a class='widget-game {status(:game.start, _cd[:game.id], _rendered)}' href='/game/{:game.id}'>
+  <div class='name'>
+    {:game.lang}
+    <div class='status'>{statusText(:game.start, _timeDiff, _cd[:game.id], :game.id, _rendered)}</div>
+  </div>
+  <div class='players'>
+    {#each :game.players as :player}
+    <div class='player'>
+      <div class='char small {:player.char}'></div>
+      <div class='name'>{:player.name}</div>
+    </div>
+    {/}
+  </div>
+</a>

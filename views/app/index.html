@@ -1,0 +1,105 @@
+<import: src="widget">
+<import: src="partial">
+<import: src="game">
+<import: src="games">
+<Root:>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<Head:>
+<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+<link href='/css/app.css' rel='stylesheet' />
+<Title:>
+Type4Fame
+<Header:>
+<header class='top-bar'>
+  <ul>
+    <li class='name'>
+      <h1>
+        <a href='/'>Type4Fame</a>
+      </h1>
+    </li>
+    <li class='toggle-topbar'>
+      <a href='#'></a>
+    </li>
+  </ul>
+  <section>
+    <ul class='left'>
+      <li>
+        <a href='/new/en/' id='en'>English</a>
+      </li>
+      <li>
+        <a href='/new/ru/' id='ru'>Russian</a>
+      </li>
+    </ul>
+    <ul class='right'>
+      {#if _user.stats.langs[_game.langId].dicts[_game.dictId]}
+      <li class='average'>
+        Average: {.average}
+      </li>
+      <li class='record'>
+        Record: {.record}
+      </li>
+      {/}
+      {{#if _user.auth.local}}
+      <li>
+        <a href='/logout' x-bind='click/0: reload'>
+          {{_user.auth.local.username}}
+        </a>
+      </li>
+      {{else}}
+      <li>
+        <a data-reveal-id='login-box' href='#'>Login</a>
+      </li>
+      <li class='has-button'>
+        <a class='button small' data-reveal-id='register-box' href='#'>Register</a>
+      </li>
+      {{/}}
+    </ul>
+  </section>
+</header>
+<ui:connectionAlert />
+<Body:>
+Hello
+<Footer:>
+{{#unless _user.auth.local}}
+<app:partial:auth:login>
+<app:partial:auth:register>
+{{/}}
+<Scripts:>
+<script src='/js/foundation/modernizr.foundation.js'></script>
+<script src='/js/foundation/jquery.js'></script>
+<script src='/js/foundation/jquery.cookie.js'></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'FILL IN GA NUMBER']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  //]]>
+</script>
+<Tail:>
+<script src='/js/foundation/jquery.event.move.js'></script>
+<script src='/js/foundation/jquery.foundation.forms.js'></script>
+<script src='/js/foundation/jquery.placeholder.js'></script>
+<script src='/js/foundation/jquery.event.swipe.js'></script>
+<script src='/js/foundation/jquery.foundation.accordion.js'></script>
+<script src='/js/foundation/jquery.foundation.tabs.js'></script>
+<script src='/js/foundation/jquery.foundation.joyride.js'></script>
+<script src='/js/foundation/jquery.foundation.clearing.js'></script>
+<script src='/js/foundation/jquery.foundation.alerts.js'></script>
+<script src='/js/foundation/jquery.foundation.buttons.js'></script>
+<script src='/js/foundation/jquery.foundation.mediaQueryToggle.js'></script>
+<script src='/js/foundation/jquery.foundation.topbar.js'></script>
+<script src='/js/foundation/jquery.foundation.tooltips.js'></script>
+<script src='/js/foundation/jquery.foundation.orbit.js'></script>
+<script src='/js/foundation/jquery.foundation.navigation.js'></script>
+<script src='/js/foundation/jquery.foundation.reveal.js'></script>
+<script src='/js/foundation/jquery.foundation.magellan.js'></script>
+<script src='/js/foundation.js'></script>
+<noscript>
+  Please enable javascript for a significantly better user experience.
+</noscript>

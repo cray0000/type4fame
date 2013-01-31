@@ -1,0 +1,36 @@
+<player:>
+<section class='widget-player {result(:player.finish)} {record(:player.record)}'>
+  <br />
+  {#unless equal(:player.id, _userId)}
+  <div class='name'>
+    {:player.name}
+  </div>
+  {/}
+  <div class='track'>
+    <div class='wrapper'>
+      <div class='speed'>
+        <div class='text'>
+          {speed(:player.time, _game.total)} cpm
+        </div>
+      </div>
+      <div class='errors {errorsMark(:player.errors, _game.total)}'>
+        <div class='text'>
+          {:player.errors} mis
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='record'></div>
+  {#if equal(:player.id, _userId)}
+  <a class='user big char {:player.char}' data-reveal-id='chars-box' href='#' style='right: {progress(:player.typed, _game.total)}' x-bind='click/0: showChars'>
+    <span>Change</span>
+  </a>
+  {else}
+  <div class='char big {:player.char}' style='right: {progress(:player.typed, _game.total)}'></div>
+  {/}
+  <div class='line'>
+    <div class='prev'></div>
+    <div class='next'></div>
+    <div class='rest'></div>
+  </div>
+</section>

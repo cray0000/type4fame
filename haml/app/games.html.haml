@@ -1,0 +1,12 @@
+<Body:>
+.page
+  .games
+    {#each _games as :game}<app:widget:game>{/}
+  .right
+    .create
+      %h2 New Game
+      %a(href="/new/en/") English
+      %a(href="/new/ru/") Russian
+    .loading
+      - (1..7).each do
+        %b

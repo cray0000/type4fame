@@ -1,0 +1,10 @@
+<chars:>
+.widget-chars
+  -#{#each .chars as :section}
+  -#%h3 {:section.name}
+  -#{#each :section.values as :val}
+  -#%a(rel='{:section.name}-1' class='{:section.name}-1' x-bind='click: selectChar')
+  -#{/}
+  -#{/}
+  - (1..41).each do |i|
+    %a(rel="car-#{i}" class="big car-#{i}" x-bind='click: selectChar')

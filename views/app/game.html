@@ -1,0 +1,21 @@
+<Body:>
+<div class='page'>
+  <div class='container'>
+    {#with _player}<app:widget:text>{/}
+  </div>
+  <div class='right'>
+    <app:widget:info>
+  </div>
+  <div class='players'>
+    {#with _player as :player}<app:widget:player>{/}
+    {#each _players as :player}
+    {#unless equal(:player.id, _userId)}
+    <app:widget:player>
+    {/}
+    {/}
+  </div>
+</div>
+<div class='reveal-modal large' id='chars-box'>
+  {#if _showSelectChar as :char}{#with _user as :user}<app:widget:chars>{/}{/}
+  <a class='close-reveal-modal'>×</a>
+</div>

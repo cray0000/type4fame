@@ -1,0 +1,123 @@
+// Your custom settings file to override Foundation defaults
+@import "settings"
+
+// Comment out this import if you are customizing you imports below
+@import foundation
+
+@import base
+
+// ----------------------------------------
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "compass/css3";
+// @import "foundation/settings";
+// @import "foundation/functions/all";
+
+// Control which mixins you have access too
+
+// @import "foundation/mixins/clearfix";
+// @import "foundation/mixins/css-triangle";
+// @import "foundation/mixins/font-size";
+
+// Must include next two for semantic grid to work
+
+// @import "foundation/mixins/respond-to";
+// @import "foundation/mixins/semantic-grid";
+
+// @import "modular-scale";
+// @import "foundation/common/globals";
+
+// Must include the grid for any responsiveness
+
+// @import "foundation/components/grid";
+
+// Control which common styles get compiled
+
+// @import "foundation/common/typography";
+// @import "foundation/common/forms";
+
+// Control which components you get if customizing
+
+// @import "foundation/components/modules/buttons";
+// @import "foundation/components/modules/tabs";
+// @import "foundation/components/modules/ui";
+// @import "foundation/components/modules/topbar";
+// @import "foundation/components/modules/navbar";
+// @import "foundation/components/modules/orbit";
+// @import "foundation/components/modules/reveal";
+// @import "foundation/components/modules/offcanvas";
+
+// Media Queries Overrides
+// @import "foundation/components/modules/mqueries";
+
+.btn
+  @extend .button
+
+.help-inline
+  position: relative
+  top: -7px
+  color: red
+  margin-left: 7px
+
+.top-bar
+  .name
+    a:hover
+      +transition(all 0.2s)
+      +text-shadow(0 0 1px white, 0 0 20px white)
+  .button
+    display: inline-block
+  .average, .record
+    color: white
+    +font-size(13)
+    font-weight: bold
+    padding:
+      left: 15px
+      right: 15px
+
+body
+  overflow-x: hidden
+
+.page
+  +outerRow
+
+.container
+  +column(8)
+
+.right
+  +column(4)
+
+.players
+  +column(10)
+
+.games
+  +column(8)
+
+.create
+  text-align: center
+  h2
+    margin-top: 0
+    +font-size(24)
+    text-align: center
+    color: #444
+    font-family: "Poiret One", sans-serif
+    border-bottom: 1px solid #ccc
+  a
+    display: inline-block
+    margin-bottom: 10px
+    +sassy-button("glass", 10px, 19px, #4ba3cc)
+    width: 80%
+
+#test-width
+  position: absolute
+  visibility: hidden
+  z-index: -1
+
+@import "components/*"
+
+.loading
+  padding: 25px 0 0 0
+  +loading(L, O, A, D, I, N, G)
+
+
+@import "widget/*"

@@ -1,0 +1,83 @@
+$text-size: 18px
+$text-line: 28px
+$text-height: 10px + $text-line * 5
+
+.widget-text
+  input
+    position: relative
+    z-index: 1
+    margin-bottom: 0
+    +font-size(18)
+    color: black
+    +transition(none)
+    border: none
+    +box-shadow(0 0 5px 0 red, 0 0 10px 0 red)
+    &.error
+      background: yellow !important
+    &:focus
+      background: none
+      outline: none
+      border-bottom: 1px solid #b3b3b3
+      box-shadow: none
+      border-radius: 0
+  .countdown, .gate
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    line-height: $text-height !important
+    text-align: center
+  .countdown
+    background: url("/img/tile_dark.png") repeat
+    color: rgba(white, 0.8)
+    font-size: $text-height !important
+    +text-shadow(0 0 3px white, 0 0 5px white)
+    +box-shadow(0 -5px 5px 0 white inset, 0 -5px 3px 0 white inset)
+    +border-radius(0 0 10px 10px)
+  .gate
+    +opaque
+    +transition(opacity 1.5s)
+    font-size: $text-height / 3 !important
+    background: white
+    font-variant: small-caps
+  .text
+    position: relative
+    padding: 4px 6px 6px
+    *
+      font-size: $text-size
+      line-height: $text-line
+    height: $text-height
+    overflow: hidden
+    color: rgba(black, 0.4)
+    +text-shadow(0 0 3px rgba(black, 0.4))
+    &.off-countdown
+      .countdown
+        display: none
+      color: black
+      +text-shadow(none)
+      .next
+        border-bottom: 2px solid black
+    &.off-gate
+      .gate
+        +transparent
+  .line
+    .prev
+      color: #ccc
+    //.next
+      //border-bottom: 2px solid black
+
+  button
+    @extend .button
+    @extend .secondary
+    @extend .large
+    left: 33.3333%
+    width: 33.3333%
+    +font-size(24)
+    font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace
+    text-transform: uppercase
+    letter-spacing: 0.2em
+    color: #666
+    opacity: 1
+    &.ready
+      visibility: hidden

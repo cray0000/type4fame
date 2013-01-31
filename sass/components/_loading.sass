@@ -1,0 +1,50 @@
+=loading($letters...)
+  $total: length($letters)
+  *
+    position: relative
+    display: inline-block
+    +animation(loading #{$total * 0.2 + 0.6}s infinite)
+    font-size: 32px
+    margin: 0 0.1em
+  *:after
+    display: inline-block
+    position: relative
+    font-family: Helvetica
+    font-size: 32px
+    font-weight: bolder
+    color: inherit
+  $i: 1
+  @each $letter in $letters
+    $delay: 0
+    @if $i == 0
+      $delay: 0.6 + $total * 0.2
+    @else
+      $delay: 0.6 + $i * 0.2
+    *:nth-child(#{$total}n+#{$i})
+      +animation-delay(#{$delay}s)
+      &:after
+        content: "#{$letter}"
+    $i: ($i + 1) % $total
+
+.loading
+  text-align: center
+
+.loading *
+  font-weight: normal
+  //color: rgba(133, 217, 255, 0.73)
+  color: #ccc
+
++keyframes(loading)
+  0%
+    +transform(scale(1.5)) // rotate(0deg)
+    color: #aaa
+    //color: rgba(133, 217, 255, 0.9)
+  10%
+    +transform(scale(1.7))
+    color: #ccc
+    //color: rgba(133, 217, 255, 0.7)
+  100%
+    +transform(scale(1.2))
+    //color: #333
+    color: transparent
+    text-shadow: #ccc 0 0 10px

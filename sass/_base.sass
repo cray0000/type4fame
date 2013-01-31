@@ -1,0 +1,33 @@
+// FONTS
+@import url(http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic,latin-ext)
+
+@import animate
+@import ./sassybuttons
+
++keyframes(lightIn)
+  0%
+    +transform(translateX(100%) skewX(-30deg))
+    +opacity(0)
+  60%
+    +transform(translateX(-20%) skewX(30deg))
+    +opacity(1)
+  80%
+    +transform(translateX(0%) skewX(-15deg))
+    +opacity(1)
+  100%
+    +transform(translateX(0%) skewX(0deg))
+    +opacity(1)
+
++keyframes(rumble)
+  0%
+    +simple-transform(false, 0deg)
+  25%
+    +simple-transform(false, -3deg, 2px, 0)
+  50%
+    +simple-transform(false, 0deg, 0px, -2px)
+  75%
+    +simple-transform(false, 3deg, -2px, 0)
+  100%
+    +simple-transform(false, 0deg, 0, 2px)
+
++animate-flash()

@@ -1,0 +1,59 @@
+.widget-game
+  display: block
+  margin-bottom: 20px
+  border-bottom: 1px dashed #aaa
+  +clearfix
+  position: relative
+  min-height: 64px
+  min-width: 1px
+  +opaque
+  +transition(opacity 0.5s)
+  > .name
+    bottom: -16px
+    +font-size(18)
+    font-weight: bold
+    padding-left: 10px
+    position: absolute
+    .status
+      margin-top: 8px
+      text-align: center
+  &.waiting
+    .status
+      //color: #00c500
+      color: #444
+    &:hover .status
+      //color: white
+      //+text-shadow(0 0 1px black, 0 0 3px black, 0 0 5px black)
+  &.ready
+    .status
+      color: #ffb100
+      //+text-shadow(0 0 2px black)
+  &.ready, &.waiting
+    .status
+      //text-shadow: 0 1px 0 #aaa
+    &:hover:after
+      content: "Join"
+      position: absolute
+      right: 0
+      top: 10px
+      +font-size(40)
+      +transform(rotate(35deg))
+      +text-shadow(0 0 1px white, 0 0 3px white, 0 0 5px #2795B6, 0 0 7px #2795B6)
+  &.go
+    cursor: not-allowed
+    +opacity(0.5)
+    .name
+      color: grey
+    .status
+      color: grey
+  .players
+    +clearfix
+    position: relative
+    bottom: -20px
+    margin-left: 100px
+  .player
+    float: left
+    margin: 3px 6px
+    > .name
+      color: #444
+      text-align: center

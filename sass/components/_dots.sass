@@ -1,0 +1,35 @@
+.loader
+  text-align: center
+  position: relative
+  width: 100%
+
+.loader span
+  background: rgba(133, 217, 255, 0.73)
+  border-radius: 5px
+  display: inline-block
+  position: relative
+  width: 10px
+  height: 10px
+  position: absolute
+
+.loader .dot_1
+  margin-right: 10px
+  animation: loading 4s ease-in-out infinite
+
+.loader .dot_2
+  animation: loading 4s ease-in-out .5s infinite
+
+.loader .dot_3
+  animation: loading 4s ease-in-out 0.95s infinite
+
+@keyframes loading
+  from
+    margin-left: 50%
+    opacity: 0
+  50%
+    margin-left: 0
+    opacity: 1
+  to
+    margin-left: -50%
+    opacity: 0
+

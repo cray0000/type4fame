@@ -1,0 +1,102 @@
+$char-bottom: 0 !default
+
+@import player/*
+
+$player-height: 100px !default
+
+.widget-player
+  position: relative
+  height: $player-height
+  margin-bottom: 30px
+  .char
+    position: absolute
+    bottom: $char-bottom
+    +transition(right .5s linear)
+    &.user
+      display: block
+      cursor: pointer
+      //&:hover:after
+        +font-size(18)
+        position: absolute
+        left: 100%
+        top: 20%
+        content: "Change"
+        font-variant: small-caps
+      span
+        z-index: -1
+        +transparent
+        +font-size(5)
+        position: absolute
+        left: 17%
+        bottom: 20%
+        display: inline-block
+        font-variant: small-caps
+        font-style: italic
+        color: #6b87da
+        +transition(all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275))
+      &:hover span
+        +opaque
+        +font-size(40)
+        left: 40%
+        bottom: 100%
+        +transform(rotate(25deg))
+        //background: rgba(white, 0.8)
+        //box-shadow: 0 0 10px 0 rgba(white, 0.8)
+        //text-shadow: 0 0 3px rgba(blue, 1), 0 0 5px rgba(blue, 1), 0 0 3px rgba(white, 1), 0 0 5px rgba(white, 1), 0 0 8px rgba(white, 1), 0 0 10px rgba(white, 1), 0 0 15px rgba(white, 1), 0 0 20px rgba(white, 1), 0 0 26px rgba(white, 1), 0 0 34px rgba(white, 1)
+  .typed
+    margin-top: 15px
+  .track
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 20px
+    border-radius: 2px 2px 2px 2px
+    border-bottom: 2px solid white
+    //background: rgba(0,0,0,0.25)
+    //+box-shadow(0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3))
+    //+box-shadow(0 2px 6px rgba(0, 0, 0, 0.25), inset 0 -2px rgba(255, 255, 255, 0.3), inset 0 -10px rgba(255, 255, 255, 0.2), inset 0 -15px 20px rgba(255, 255, 255, 0.15), inset 0 15px 30px rgba(0, 0, 0, 0.15))
+    +box-shadow(3px 1px 0 0 rgba(0, 0, 0, 0.05), 3px 2px 0 0 rgba(0, 0, 0, 0.05), 3px 3px 0 0 rgba(0, 0, 0, 0.05), inset 0 -2px rgba(255, 255, 255, 0.3), inset 0 -10px rgba(255, 255, 255, 0.2), inset 0 -15px 20px rgba(255, 255, 255, 0.15), inset 0 15px 30px rgba(0, 0, 0, 0.12))
+    +transform(skewX(-45deg))
+    //neon
+    //+text-shadow(0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #FF00DE, 0 0 70px #FF00DE, 0 0 80px #FF00DE, 0 0 100px #FF00DE, 0 0 150px #FF00DE)
+  .wrapper
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 22px
+    overflow: hidden
+  .name
+    //position: relative
+    //z-index: 100
+    //font-size: 40px
+    position: absolute
+    bottom: 40px
+    left: 21%
+    font-weight: bold
+    color: white
+    font-size: 24px
+    //color: white
+    //text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15)
+    //+text-shadow(0 1px 0 lighten(#ccc, 5%), 0 2px 0 lighten(#c9c9c9, 5%), 0 3px 0 lighten(#bbb, 5%), 0 4px 0 lighten(#b9b9b9, 5%), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2))
+    +text-shadow(0 1px 0 lighten(#ccc, 10%), 0 2px 0 lighten(#c9c9c9, 10%), 0 3px 0 lighten(#bbb, 10%), 0 4px 0 lighten(#b9b9b9, 10%), 0 1px 3px rgba(0,0,0,.2), 0 3px 5px rgba(0,0,0,.13), 0 5px 10px rgba(0,0,0,.15), 0 8px 10px rgba(0,0,0,.13))
+  .errors
+    left: -20%
+    +transition(left 2s cubic-bezier(0.175, 0.885, 0.32, 1.275))
+    &.excellent, &.good
+      +track-text(green)
+    &.normal
+      +track-text(orange)
+    &.bad
+      +track-text(red)
+  .speed
+    +track-text(#4f86ff)
+    right: -20%
+    +transition(right 2s cubic-bezier(0.175, 0.885, 0.32, 1.275))
+  &.result
+    .errors
+      left: 50%
+    .speed
+      right: 50%
+  @extend %player-record

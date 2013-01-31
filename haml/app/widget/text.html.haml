@@ -1,0 +1,23 @@
+- countdown = '{showCountdown(_game._go)}'
+- gate      = '{showGate(_game._steady)}'
+- start     = '{showStart(_game._ready)}'
+
+<text:>
+.widget-text
+  %input#input(type='text' autofocus="autofocus"
+         x-bind='keydown/0: input'
+         class='{error(.error)}')
+  %div(class="text #{countdown} #{gate}")
+    .line
+      %span.prev
+        {._view.line.prev}
+      %span.next
+        {._view.line.next}
+      %span.rest
+        {._view.line.rest}
+    .rest#target-width {._view.fromSecondLine}
+    #test-width
+    .countdown {_game._countdown}
+    .gate {gateMessage(_game._ready)}
+  %button(x-bind='click: start'
+          class="start #{start}") Start

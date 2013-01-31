@@ -1,0 +1,17 @@
+<Body:>
+.page
+  .container
+    {#with _player}<app:widget:text>{/}
+  .right
+    <app:widget:info>
+  .players
+    {#with _player as :player}<app:widget:player>{/}
+    {#each _players as :player}
+    {#unless equal(:player.id, _userId)}
+    <app:widget:player>
+    {/}
+    {/}
+
+#chars-box.reveal-modal.large
+  {#if _showSelectChar as :char}{#with _user as :user}<app:widget:chars>{/}{/}
+  %a.close-reveal-modal ×

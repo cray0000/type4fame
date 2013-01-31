@@ -1,0 +1,20 @@
+$tDir: 'char/car'
+$tTotal: 41
+$char-bottom: -3px
+
+%char-cars-big  
+  width: image-width("#{$tDir}/1.png")
+  height: image-height("#{$tDir}/1.png")
+%char-cars-small
+  width: image-width("#{$tDir}_s/1.png")
+  height: image-height("#{$tDir}_s/1.png")
+
+@for $i from 1 through $tTotal
+  .car-#{$i}    
+    &.big
+      @extend %char-cars-big
+      background-image: url("/img/#{$tDir}/#{$i}.png")
+    &.small
+      @extend %char-cars-small
+      background-image: url("/img/#{$tDir}_s/#{$i}.png")
+  

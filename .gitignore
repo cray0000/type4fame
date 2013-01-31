@@ -1,0 +1,17 @@
+/.DS_Store
+/public/gen/*
+/*.swp
+/node_modules/*/
+#!/node_modules/derby/
+#!/node_modules/racer/
+#!/node_modules/racer-db-mongo/
+#!/node_modules/derby-auth/
+
+# Ignore Idea workspace.xml
+/.idea/*.iws
+/.idea/workspace.xml
+/.idea/tasks.xml
+
+# Cache
+/.sass-cache/*
+

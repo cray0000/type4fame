@@ -1,0 +1,22 @@
+<text:>
+<div class='widget-text'>
+  <input autofocus='autofocus' class='{error(.error)}' id='input' type='text' x-bind='keydown/0: input' />
+  <div class='text {showCountdown(_game._go)} {showGate(_game._steady)}'>
+    <div class='line'>
+      <span class='prev'>
+        {._view.line.prev}
+      </span>
+      <span class='next'>
+        {._view.line.next}
+      </span>
+      <span class='rest'>
+        {._view.line.rest}
+      </span>
+    </div>
+    <div class='rest' id='target-width'>{._view.fromSecondLine}</div>
+    <div id='test-width'></div>
+    <div class='countdown'>{_game._countdown}</div>
+    <div class='gate'>{gateMessage(_game._ready)}</div>
+  </div>
+  <button class='start {showStart(_game._ready)}' x-bind='click: start'>Start</button>
+</div>

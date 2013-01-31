@@ -1,0 +1,26 @@
+<player:>
+%section(class="widget-player {result(:player.finish)} {record(:player.record)}")
+  %br/
+  {#unless equal(:player.id, _userId)}
+  .name
+    {:player.name}
+  {/}
+  .track
+    .wrapper
+      .speed
+        .text
+          {speed(:player.time, _game.total)} cpm
+      %div(class="errors {errorsMark(:player.errors, _game.total)}")
+        .text
+          {:player.errors} mis
+  .record
+  {#if equal(:player.id, _userId)}
+  %a(href='#' class="user big char {:player.char}" x-bind="click/0: showChars" data-reveal-id='chars-box' style="right: {progress(:player.typed, _game.total)}")
+    %span Change
+  {else}
+  %div(class="char big {:player.char}" style="right: {progress(:player.typed, _game.total)}")
+  {/}
+  .line
+    .prev
+    .next
+    .rest

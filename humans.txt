@@ -1,0 +1,9 @@
+/* Type4Fame was made by Pavel Zhukov (cray0000@gmail.com) */
+/* trickybug.com */
+/* cray0000.com */
+/* gidevelop.com */
+
+/* SITE */
+  Standards: HTML5, CSS3, WebSockets
+  Components: Derby.js, jQuery, Zurb Foundation
+  Software: RubyMine, Git
