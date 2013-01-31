@@ -7831,7 +7831,7 @@ body {
   right: 10px !important;
   bottom: 50px !important;
   content: "Chat";
-  color: #dddddd;
+  color: rgba(0, 0, 0, 0.1);
   font-size: 30px;
 }
 /* line 59, ../../sass/widget/_text.sass */
