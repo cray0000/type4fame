@@ -38,9 +38,17 @@ $text-height: 10px + $text-line * 5
   .gate
     +opaque
     +transition(opacity 1.5s)
-    font-size: $text-height / 3 !important
+    text-align: left
     background: white
     font-variant: small-caps
+    .line, .line *
+      font-size: 14px !important
+      line-height: 17px !important
+    .line *
+      +text-shadow(0 0 3px white, 0 0 5px white)
+    .line
+      +text-shadow(none)
+      color: #333
   .text
     position: relative
     padding: 4px 6px 6px

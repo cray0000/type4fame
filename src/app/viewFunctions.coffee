@@ -47,8 +47,8 @@ view.fn 'errorsMark', (errors, total) ->
 view.fn 'showTime', (go, finish) ->
   if not go or finish then '' else 'hidden'
 
-view.fn 'showGate', (steady) ->
-  if steady then 'off-gate' else ''
+view.fn 'showGate', (steady, finish) ->
+  if steady and not finish then 'off-gate' else ''
 
 view.fn 'showCountdown', (go) ->
   if go then 'off-countdown' else ''

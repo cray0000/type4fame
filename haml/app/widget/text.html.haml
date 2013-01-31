@@ -1,11 +1,12 @@
 - countdown = '{showCountdown(_game._go)}'
-- gate      = '{showGate(_game._steady)}'
+- gate      = '{showGate(_game._steady, _player.finish)}'
 - start     = '{showStart(_game._ready)}'
 
 <text:>
 .widget-text
   %input#input(type='text' autofocus="autofocus"
          x-bind='keydown/0: input'
+         placeholder="Type to Chat or Play"
          class='{error(.error)}')
   %div(class="text #{countdown} #{gate}")
     .line
@@ -18,6 +19,10 @@
     .rest#target-width {._view.fromSecondLine}
     #test-width
     .countdown {_game._countdown}
-    .gate {gateMessage(_game._ready)}
+    .gate
+      {#each _game.chat as :message}
+      .line
+        {unescaped :message}
+      {/}
   %button(x-bind='click: start'
           class="start #{start}") Start

@@ -7808,11 +7808,25 @@ body {
   -ms-transition: opacity 1.5s;
   -o-transition: opacity 1.5s;
   transition: opacity 1.5s;
-  font-size: 50px !important;
+  text-align: left;
   background: white;
   font-variant: small-caps;
 }
 /* line 44, ../../sass/widget/_text.sass */
+.widget-text .gate .line, .widget-text .gate .line * {
+  font-size: 14px !important;
+  line-height: 17px !important;
+}
+/* line 47, ../../sass/widget/_text.sass */
+.widget-text .gate .line * {
+  text-shadow: 0 0 3px white, 0 0 5px white;
+}
+/* line 49, ../../sass/widget/_text.sass */
+.widget-text .gate .line {
+  text-shadow: none;
+  color: #333333;
+}
+/* line 52, ../../sass/widget/_text.sass */
 .widget-text .text {
   position: relative;
   padding: 4px 6px 6px;
@@ -7821,34 +7835,34 @@ body {
   color: rgba(0, 0, 0, 0.4);
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
-/* line 47, ../../sass/widget/_text.sass */
+/* line 55, ../../sass/widget/_text.sass */
 .widget-text .text * {
   font-size: 18px;
   line-height: 28px;
 }
-/* line 54, ../../sass/widget/_text.sass */
+/* line 62, ../../sass/widget/_text.sass */
 .widget-text .text.off-countdown {
   color: black;
   text-shadow: none;
 }
-/* line 55, ../../sass/widget/_text.sass */
+/* line 63, ../../sass/widget/_text.sass */
 .widget-text .text.off-countdown .countdown {
   display: none;
 }
-/* line 59, ../../sass/widget/_text.sass */
+/* line 67, ../../sass/widget/_text.sass */
 .widget-text .text.off-countdown .next {
   border-bottom: 2px solid black;
 }
-/* line 62, ../../sass/widget/_text.sass */
+/* line 70, ../../sass/widget/_text.sass */
 .widget-text .text.off-gate .gate {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 65, ../../sass/widget/_text.sass */
+/* line 73, ../../sass/widget/_text.sass */
 .widget-text .line .prev {
   color: #cccccc;
 }
-/* line 70, ../../sass/widget/_text.sass */
+/* line 78, ../../sass/widget/_text.sass */
 .widget-text button {
   left: 33.3333%;
   width: 33.3333%;
@@ -7860,7 +7874,7 @@ body {
   color: #666666;
   opacity: 1;
 }
-/* line 82, ../../sass/widget/_text.sass */
+/* line 90, ../../sass/widget/_text.sass */
 .widget-text button.ready {
   visibility: hidden;
 }
