@@ -124,6 +124,8 @@ if process.env.INIT_DATA is "yes"
           console.log "English total: " + enSize
           store.set "langs.ru.dicts.general.size", ruSize
           console.log "Russian total: " + ruSize
+          console.log "Done! Stop the server (Ctrl+C) and start it again without INIT_DATA var:"
+          console.log "$ node server"
       , (timeout += 25)
   )()
 
