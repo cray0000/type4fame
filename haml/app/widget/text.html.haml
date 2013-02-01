@@ -19,9 +19,10 @@
     #test-width
     .countdown {_game._countdown}
     .gate
-      {#each _game.chat as :message}
-      .line
-        {unescaped :message}
-      {/}
+      .chat
+        {#each _game.chat as :message}
+        .line
+          {unescaped :message}
+        {/}
   %button(x-bind='click: start'
           class="start #{start}") Start

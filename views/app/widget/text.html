@@ -17,11 +17,13 @@
     <div id='test-width'></div>
     <div class='countdown'>{_game._countdown}</div>
     <div class='gate'>
-      {#each _game.chat as :message}
-      <div class='line'>
-        {unescaped :message}
+      <div class='chat'>
+        {#each _game.chat as :message}
+        <div class='line'>
+          {unescaped :message}
+        </div>
+        {/}
       </div>
-      {/}
     </div>
   </div>
   <button class='start {showStart(_game._ready)}' x-bind='click: start'>Start</button>
