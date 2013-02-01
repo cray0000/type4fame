@@ -43,12 +43,13 @@ $text-height: 10px + $text-line * 5
     +opaque
     +transition(opacity 1.5s)
     background: white
+    +text-shadow(none)
     &:after
       position: absolute
-      right: 18px
+      right: 23px
       top: 10px
       content: "Chat"
-      color: rgba(black, 0.1)
+      color: rgba(black, 0.2)
       +font-size(30)
 
   .text
