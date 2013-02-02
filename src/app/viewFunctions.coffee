@@ -84,3 +84,5 @@ view.fn 'status', (start, countdown) ->
   else
     "go"
 
+view.fn 'length', (players) ->
+  players?.length || 0

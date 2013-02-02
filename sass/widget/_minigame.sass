@@ -1,0 +1,33 @@
+.minigames
+  +opaque
+  +transition(opacity 0.5s)
+  &.off-gate
+    +transparent
+  .title
+    font-family: "Poiret One", sans-serif
+    text-align: center
+    +font-size(18)
+    line-height: 1.4
+    border-bottom: 1px solid #ccc
+
+.widget-minigame
+  display: block
+  //background: rgba(black, 0.05)
+  border-bottom: 1px dashed rgba(black, 0.05)
+  padding: 8px 4px
+  &:hover
+    background: rgba(black, 0.05)
+  &.ready
+    background: rgba(yellow, 0.3)
+  &.go
+    display: none
+  .status
+    display: none
+  .name
+    display: inline-block
+    width: 80%
+  .players-amount
+    display: inline-block
+    width: 20%
+    text-align: center
+    padding: 0

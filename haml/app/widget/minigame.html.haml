@@ -1,0 +1,7 @@
+<minigame:>
+%a(class="widget-minigame {status(:minigame.start, _cd[:minigame.id], _rendered)}" href="/game/{:minigame.id}")
+  %div(class="name")
+    {:minigame.lang}
+    %div(class="status") {statusText(:minigame.start, _timeDiff, _cd[:minigame.id], :minigame.id, _rendered)}
+  .players-amount
+    {length(:minigame.players)}

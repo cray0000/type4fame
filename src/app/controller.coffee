@@ -18,7 +18,8 @@ controller =
     , "lobbies.#{gameId}"
     , "users.#{userId}"
     , "config.general"
-    , (err, game, lobby, user, config) ->
+    , "lobbies"
+    , (err, game, lobby, user, config, lobbies) ->
 
       return (page.redirect '/games') if not game.get('id')?
 #      console.log "Error: " + err
@@ -27,6 +28,10 @@ controller =
       model.ref '_game', game
       model.ref '_config', config
       model.ref '_lobby', lobby
+      model.ref '_lobbies', lobbies
+      model.fn '_gamesId', '_lobbies', (lobbies) ->
+        (key for key, value of lobbies).reverse()
+      model.refList '_games', lobbies, '_gamesId'
       model.ref '_player', "_game.players.#{userId}"
       model.refList '_players', '_game.players', '_game.playerIds'
 

@@ -14,6 +14,14 @@
     {/}
     {/}
   </div>
+  <div class='minigames {showGate(_game._steady, _player.finish)}'>
+    <div class='title'>Games</div>
+    {#each _games as :minigame}
+    {#unless equal(_game.id, :minigame.id)}
+    <app:widget:minigame>
+    {/}
+    {/}
+  </div>
 </div>
 <div class='reveal-modal large' id='chars-box'>
   {#if _showSelectChar as :char}{#with _user as :user}<app:widget:chars>{/}{/}
