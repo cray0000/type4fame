@@ -17,7 +17,7 @@ ready (model) ->
   helper.initTimeDiff()
 
   @on 'render:game', ->
-    console.log '> RENDER'
+    model.set '_rendered', true
 
     clearTimeout @timerId
     if game.get('start')?
@@ -31,7 +31,7 @@ ready (model) ->
     helper.setNextLine()
 
   @on 'render:games', ->
-    model.set '_rendered', true #Math.random()
+    model.set '_rendered', true
 
   game.on 'set', 'start', (startTime) =>
     @timer()
